@@ -1,0 +1,21 @@
+// Список цветов для генерации палитры
+const colorsList = [  '#EE4266', '#77EE5D', '#FAC42F', '#3F88C5', '#A25B8A',  '#FF0033', '#33FF66', '#FFCC33', '#3366CC', '#CC6699'];
+
+// Функция для генерации случайных чисел в диапазоне от минимального до максимального значения
+function getRandomNumber(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+// Функция для генерации случайной цветовой палитры из списка цветов
+function generateColorPalette() {
+  const palette = [];
+  for (let i = 0; i < 5; i++) {
+    const index = getRandomNumber(0, colorsList.length - 1);
+    palette.push(colorsList[index]);
+  }
+  return palette;
+}
+
+// Пример использования функции для генерации случайной цветовой палитры
+const colorPalette = generateColorPalette();
+console.log(colorPalette);
